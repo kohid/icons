@@ -1,0 +1,34 @@
+name: Purge jsDelivr cache
+
+# Hits the jsDelivr purge endpoint for every manifest.json that changed
+# in a push. Without this, jsDelivr caches @main URLs for up to 12 hours
+# and consumers see stale data after every manifest commit.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/manifest.json'
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed manifests and purge
+        run: |
+          set -e
+          changed=$(git diff --name-only HEAD^ HEAD | grep 'manifest.json' || true)
+          if [ -z "$changed" ]; then
+            echo "No manifest.json changes detected — nothing to purge."
+            exit 0
+          fi
+          for file in $changed; do
+            url="https://purge.jsdelivr.net/gh/${{ github.repository }}@main/$file"
+            echo "Purging: $url"
+            curl -fsS "$url" || echo "  → purge failed (continuing)"
+            echo
+          done
