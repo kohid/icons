@@ -184,15 +184,77 @@ foreach ($bases as $base => $entry) {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Canonical ordering — sort each category by Unicode CLDR position
+// (the order Emojipedia follows). Entries whose slug isn't in the
+// canonical list are kept at the end of their category.
+//
+// Tones inside each entry are sorted to: light, medium, medium-light,
+// medium-dark, dark.
+// ---------------------------------------------------------------------------
+$emoji_test = __DIR__ . '/emoji-test.txt';
+$global_index = [];
+
+if (file_exists($emoji_test)) {
+    $slugify = static function (string $name): string {
+        $s = strtolower($name);
+        $s = preg_replace('/[\'\x{2019}\x{2018}]/u', '', $s) ?? $s;
+        $s = preg_replace('/[^a-z0-9]+/u', '-', $s) ?? $s;
+        return trim($s, '-');
+    };
+    $pos = 0;
+    foreach (file($emoji_test, FILE_IGNORE_NEW_LINES) as $line) {
+        if ($line === '' || $line[0] === '#') continue;
+        if (!preg_match('/;\s*fully-qualified\s*#\s*\S+\s+E[\d.]+\s+(.+?)\s*$/u', $line, $mm)) continue;
+        $slug = $slugify($mm[1]);
+        if ($slug !== '' && !isset($global_index[$slug])) {
+            $global_index[$slug] = $pos++;
+        }
+    }
+} else {
+    fwrite(STDERR, "Note: scripts/emoji-test.txt not found — falling back to alphabetical order.\n");
+}
+
+$tone_order_suffixes = ['-light', '-medium', '-medium-light', '-medium-dark', '-dark'];
+$tone_rank = static function (string $variant) use ($tone_order_suffixes): int {
+    $best_rank = PHP_INT_MAX;
+    $best_len  = -1;
+    foreach ($tone_order_suffixes as $i => $suffix) {
+        if (str_ends_with($variant, $suffix) && strlen($suffix) > $best_len) {
+            $best_rank = $i;
+            $best_len  = strlen($suffix);
+        }
+    }
+    return $best_rank;
+};
+
 foreach ($buckets as &$arr) {
-    usort($arr, fn($a, $b) => strcmp($a['name'], $b['name']));
+    if ($global_index) {
+        // Canonical: matched entries sorted by global_index, unmatched appended.
+        $matched = [];
+        $unmatched = [];
+        foreach ($arr as $e) {
+            if (isset($global_index[$e['name']])) $matched[] = [$global_index[$e['name']], $e];
+            else $unmatched[] = $e;
+        }
+        usort($matched, fn($a, $b) => $a[0] <=> $b[0]);
+        $arr = array_merge(array_map(fn($p) => $p[1], $matched), $unmatched);
+    } else {
+        usort($arr, fn($a, $b) => strcmp($a['name'], $b['name']));
+    }
+    foreach ($arr as &$e) {
+        if (!empty($e['tones'])) {
+            usort($e['tones'], fn($a, $b) => $tone_rank($a) <=> $tone_rank($b));
+        }
+    }
+    unset($e);
 }
 unset($arr);
 
 $manifest = [
-    'version'   => '1.0.0',
+    'version'   => '1.1.0',
     'generated' => date('c'),
-    'total'     => count($bases),
+    'total'     => array_sum(array_map('count', $buckets)),
     'tab_icons' => [
         'people'     => 'grinning-face',
         'nature'     => 'dog-face',

@@ -1,7 +1,7 @@
 {
     "version": "1.1.0",
-    "generated": "2026-04-29T15:26:40+02:00",
-    "total": 1594,
+    "generated": "2026-04-29T20:14:05+02:00",
+    "total": 1586,
     "tab_icons": {
         "people": "grinning-face",
         "nature": "dog-face",
@@ -3493,9 +3493,170 @@
                     "person-in-bed-medium-dark",
                     "person-in-bed-dark"
                 ]
+            },
+            {
+                "name": "love-letter"
+            },
+            {
+                "name": "heart-with-arrow"
+            },
+            {
+                "name": "sparkling-heart"
+            },
+            {
+                "name": "growing-heart"
+            },
+            {
+                "name": "beating-heart"
+            },
+            {
+                "name": "revolving-hearts"
+            },
+            {
+                "name": "two-hearts"
+            },
+            {
+                "name": "heart-decoration"
+            },
+            {
+                "name": "heart-exclamation"
+            },
+            {
+                "name": "broken-heart"
+            },
+            {
+                "name": "mending-heart"
+            },
+            {
+                "name": "red-heart"
+            },
+            {
+                "name": "pink-heart"
+            },
+            {
+                "name": "yellow-heart"
+            },
+            {
+                "name": "green-heart"
+            },
+            {
+                "name": "blue-heart"
+            },
+            {
+                "name": "light-blue-heart"
+            },
+            {
+                "name": "purple-heart"
+            },
+            {
+                "name": "brown-heart"
+            },
+            {
+                "name": "black-heart"
+            },
+            {
+                "name": "grey-heart"
+            },
+            {
+                "name": "white-heart"
+            },
+            {
+                "name": "hundred-points"
+            },
+            {
+                "name": "anger-symbol"
+            },
+            {
+                "name": "collision"
+            },
+            {
+                "name": "dizzy"
+            },
+            {
+                "name": "sweat-droplets"
+            },
+            {
+                "name": "hole"
+            },
+            {
+                "name": "left-speech-bubble"
+            },
+            {
+                "name": "right-anger-bubble"
+            },
+            {
+                "name": "zzz"
+            },
+            {
+                "name": "mx-claus",
+                "tones": [
+                    "mx-claus-light",
+                    "mx-claus-medium",
+                    "mx-claus-medium-light",
+                    "mx-claus-medium-dark",
+                    "mx-claus-dark"
+                ]
+            },
+            {
+                "name": "troll"
             }
         ],
         "nature": [
+            {
+                "name": "star-struck"
+            },
+            {
+                "name": "grinning-cat"
+            },
+            {
+                "name": "grinning-cat-with-smiling-eyes"
+            },
+            {
+                "name": "cat-with-tears-of-joy"
+            },
+            {
+                "name": "smiling-cat-with-heart-eyes"
+            },
+            {
+                "name": "cat-with-wry-smile"
+            },
+            {
+                "name": "kissing-cat"
+            },
+            {
+                "name": "weary-cat"
+            },
+            {
+                "name": "crying-cat"
+            },
+            {
+                "name": "see-no-evil-monkey"
+            },
+            {
+                "name": "hear-no-evil-monkey"
+            },
+            {
+                "name": "speak-no-evil-monkey"
+            },
+            {
+                "name": "heart-on-fire"
+            },
+            {
+                "name": "dashing-away"
+            },
+            {
+                "name": "horse-racing",
+                "tones": [
+                    "horse-racing-light",
+                    "horse-racing-medium",
+                    "horse-racing-medium-light",
+                    "horse-racing-medium-dark",
+                    "horse-racing-dark"
+                ]
+            },
+            {
+                "name": "monkey-face"
+            },
             {
                 "name": "monkey"
             },
@@ -3504,6 +3665,9 @@
             },
             {
                 "name": "orangutan"
+            },
+            {
+                "name": "dog-face"
             },
             {
                 "name": "dog"
@@ -3527,6 +3691,9 @@
                 "name": "raccoon"
             },
             {
+                "name": "cat-face"
+            },
+            {
                 "name": "cat"
             },
             {
@@ -3536,10 +3703,16 @@
                 "name": "lion"
             },
             {
+                "name": "tiger-face"
+            },
+            {
                 "name": "tiger"
             },
             {
                 "name": "leopard"
+            },
+            {
+                "name": "horse-face"
             },
             {
                 "name": "moose"
@@ -3560,6 +3733,9 @@
                 "name": "bison"
             },
             {
+                "name": "cow-face"
+            },
+            {
                 "name": "ox"
             },
             {
@@ -3569,10 +3745,16 @@
                 "name": "cow"
             },
             {
+                "name": "pig-face"
+            },
+            {
                 "name": "pig"
             },
             {
                 "name": "boar"
+            },
+            {
+                "name": "pig-nose"
             },
             {
                 "name": "ram"
@@ -3605,6 +3787,9 @@
                 "name": "hippopotamus"
             },
             {
+                "name": "mouse-face"
+            },
+            {
                 "name": "mouse"
             },
             {
@@ -3612,6 +3797,9 @@
             },
             {
                 "name": "hamster"
+            },
+            {
+                "name": "rabbit-face"
             },
             {
                 "name": "rabbit"
@@ -3671,6 +3859,12 @@
                 "name": "hatching-chick"
             },
             {
+                "name": "baby-chick"
+            },
+            {
+                "name": "front-facing-baby-chick"
+            },
+            {
                 "name": "bird"
             },
             {
@@ -3719,6 +3913,9 @@
                 "name": "snake"
             },
             {
+                "name": "dragon-face"
+            },
+            {
                 "name": "dragon"
             },
             {
@@ -3726,6 +3923,9 @@
             },
             {
                 "name": "t-rex"
+            },
+            {
+                "name": "spouting-whale"
             },
             {
                 "name": "whale"
@@ -3845,6 +4045,9 @@
                 "name": "deciduous-tree"
             },
             {
+                "name": "palm-tree"
+            },
+            {
                 "name": "cactus"
             },
             {
@@ -3878,85 +4081,34 @@
                 "name": "brown-mushroom"
             },
             {
-                "name": "carousel-horse"
-            },
-            {
-                "name": "cat-with-tears-of-joy"
-            },
-            {
-                "name": "cat-with-wry-smile"
-            },
-            {
-                "name": "christmas-tree"
-            },
-            {
-                "name": "cloud"
-            },
-            {
-                "name": "cloud-with-lightning"
-            },
-            {
-                "name": "cloud-with-lightning-and-rain"
-            },
-            {
-                "name": "cloud-with-rain"
-            },
-            {
-                "name": "cloud-with-snow"
-            },
-            {
-                "name": "comet"
-            },
-            {
-                "name": "computer-mouse"
-            },
-            {
-                "name": "crab"
-            },
-            {
-                "name": "crescent-moon"
-            },
-            {
-                "name": "cricket-game"
-            },
-            {
-                "name": "crying-cat"
-            },
-            {
-                "name": "dashing-away"
-            },
-            {
-                "name": "dotted-six-pointed-star"
-            },
-            {
-                "name": "droplet"
-            },
-            {
-                "name": "eight-pointed-star"
-            },
-            {
-                "name": "fire"
-            },
-            {
-                "name": "fire-engine"
-            },
-            {
-                "name": "fire-extinguisher"
-            },
-            {
-                "name": "first-quarter-moon"
-            },
-            {
-                "name": "fish-cake-with-swirl"
-            },
-            {
-                "name": "fog"
+                "name": "hot-dog"
             },
             {
                 "name": "fried-shrimp"
             },
             {
-                "name": "full-moon"
+                "name": "fish-cake-with-swirl"
+            },
+            {
+                "name": "moon-cake"
+            },
+            {
+                "name": "crab"
+            },
+            {
+                "name": "lobster"
+            },
+            {
+                "name": "shrimp"
+            },
+            {
+                "name": "squid"
+            },
+            {
+                "name": "oyster"
+            },
+            {
+                "name": "globe-showing-europe-africa"
             },
             {
                 "name": "globe-showing-americas"
@@ -3965,98 +4117,109 @@
                 "name": "globe-showing-asia-australia"
             },
             {
-                "name": "globe-showing-europe-africa"
-            },
-            {
                 "name": "globe-with-meridians"
             },
             {
-                "name": "glowing-star"
-            },
-            {
-                "name": "grinning-cat"
-            },
-            {
-                "name": "grinning-cat-with-smiling-eyes"
-            },
-            {
-                "name": "hear-no-evil-monkey"
-            },
-            {
-                "name": "heart-on-fire"
-            },
-            {
-                "name": "horse-racing",
-                "tones": [
-                    "horse-racing-light",
-                    "horse-racing-medium",
-                    "horse-racing-medium-light",
-                    "horse-racing-medium-dark",
-                    "horse-racing-dark"
-                ]
-            },
-            {
-                "name": "hot-dog"
-            },
-            {
-                "name": "kissing-cat"
-            },
-            {
-                "name": "last-quarter-moon"
-            },
-            {
-                "name": "lobster"
-            },
-            {
-                "name": "mahjong-red-dragon"
-            },
-            {
-                "name": "moon-cake"
-            },
-            {
-                "name": "moon-viewing-ceremony"
-            },
-            {
-                "name": "mount-fuji"
+                "name": "snow-capped-mountain"
             },
             {
                 "name": "mountain"
             },
             {
-                "name": "mountain-cableway"
+                "name": "volcano"
+            },
+            {
+                "name": "mount-fuji"
+            },
+            {
+                "name": "carousel-horse"
             },
             {
                 "name": "mountain-railway"
             },
             {
-                "name": "mouse-trap"
+                "name": "fire-engine"
+            },
+            {
+                "name": "mountain-cableway"
             },
             {
                 "name": "new-moon"
             },
             {
-                "name": "oyster"
+                "name": "waxing-crescent-moon"
             },
             {
-                "name": "phoenix-bird"
+                "name": "first-quarter-moon"
             },
             {
-                "name": "rainbow"
+                "name": "waxing-gibbous-moon"
             },
             {
-                "name": "see-no-evil-monkey"
+                "name": "full-moon"
+            },
+            {
+                "name": "waning-gibbous-moon"
+            },
+            {
+                "name": "last-quarter-moon"
+            },
+            {
+                "name": "waning-crescent-moon"
+            },
+            {
+                "name": "crescent-moon"
+            },
+            {
+                "name": "sun"
+            },
+            {
+                "name": "star"
+            },
+            {
+                "name": "glowing-star"
             },
             {
                 "name": "shooting-star"
             },
             {
-                "name": "shrimp"
+                "name": "cloud"
             },
             {
-                "name": "smiling-cat-with-heart-eyes"
+                "name": "sun-behind-cloud"
             },
             {
-                "name": "snow-capped-mountain"
+                "name": "cloud-with-lightning-and-rain"
+            },
+            {
+                "name": "sun-behind-small-cloud"
+            },
+            {
+                "name": "sun-behind-large-cloud"
+            },
+            {
+                "name": "sun-behind-rain-cloud"
+            },
+            {
+                "name": "cloud-with-rain"
+            },
+            {
+                "name": "cloud-with-snow"
+            },
+            {
+                "name": "cloud-with-lightning"
+            },
+            {
+                "name": "tornado"
+            },
+            {
+                "name": "fog"
+            },
+            {
+                "name": "rainbow"
+            },
+            {
+                "name": "umbrella-with-rain-drops"
             },
             {
                 "name": "snowflake"
@@ -4068,121 +4231,97 @@
                 "name": "snowman-without-snow"
             },
             {
+                "name": "comet"
+            },
+            {
+                "name": "fire"
+            },
+            {
+                "name": "droplet"
+            },
+            {
+                "name": "christmas-tree"
+            },
+            {
                 "name": "sparkles"
-            },
-            {
-                "name": "speak-no-evil-monkey"
-            },
-            {
-                "name": "squid"
-            },
-            {
-                "name": "star"
-            },
-            {
-                "name": "star-and-crescent"
-            },
-            {
-                "name": "star-of-david"
-            },
-            {
-                "name": "star-struck"
-            },
-            {
-                "name": "sun"
-            },
-            {
-                "name": "sun-behind-cloud"
-            },
-            {
-                "name": "sun-behind-large-cloud"
-            },
-            {
-                "name": "sun-behind-rain-cloud"
-            },
-            {
-                "name": "sun-behind-small-cloud"
             },
             {
                 "name": "tanabata-tree"
             },
             {
-                "name": "teddy-bear"
-            },
-            {
-                "name": "tornado"
-            },
-            {
-                "name": "umbrella-with-rain-drops"
-            },
-            {
-                "name": "volcano"
-            },
-            {
-                "name": "waning-crescent-moon"
-            },
-            {
-                "name": "waning-gibbous-moon"
-            },
-            {
-                "name": "waxing-crescent-moon"
-            },
-            {
-                "name": "waxing-gibbous-moon"
-            },
-            {
-                "name": "weary-cat"
-            },
-            {
                 "name": "wind-chime"
             },
             {
-                "name": "monkey-face"
+                "name": "moon-viewing-ceremony"
             },
             {
-                "name": "dog-face"
+                "name": "cricket-game"
             },
             {
-                "name": "cat-face"
+                "name": "teddy-bear"
             },
             {
-                "name": "tiger-face"
+                "name": "mahjong-red-dragon"
             },
             {
-                "name": "horse-face"
+                "name": "computer-mouse"
             },
             {
-                "name": "cow-face"
+                "name": "mouse-trap"
             },
             {
-                "name": "pig-face"
+                "name": "fire-extinguisher"
             },
             {
-                "name": "pig-nose"
+                "name": "star-of-david"
             },
             {
-                "name": "mouse-face"
+                "name": "star-and-crescent"
             },
             {
-                "name": "rabbit-face"
+                "name": "dotted-six-pointed-star"
             },
             {
-                "name": "baby-chick"
+                "name": "eight-pointed-star"
             },
             {
-                "name": "front-facing-baby-chick"
+                "name": "phoenix-bird"
             },
             {
-                "name": "dragon-face"
+                "name": "unicorn"
             },
             {
-                "name": "spouting-whale"
+                "name": "ewe"
             },
             {
-                "name": "palm-tree"
+                "name": "dodo"
+            },
+            {
+                "name": "goose"
+            },
+            {
+                "name": "frog"
+            },
+            {
+                "name": "spiral-shell"
+            },
+            {
+                "name": "white-flower"
+            },
+            {
+                "name": "hyacinth"
+            },
+            {
+                "name": "potted-plant"
+            },
+            {
+                "name": "sheaf-of-rice"
             }
         ],
         "food": [
+            {
+                "name": "orange-heart"
+            },
             {
                 "name": "grapes"
             },
@@ -4253,6 +4392,9 @@
                 "name": "carrot"
             },
             {
+                "name": "ear-of-corn"
+            },
+            {
                 "name": "hot-pepper"
             },
             {
@@ -4313,6 +4455,12 @@
                 "name": "cheese-wedge"
             },
             {
+                "name": "meat-on-bone"
+            },
+            {
+                "name": "poultry-leg"
+            },
+            {
                 "name": "cut-of-meat"
             },
             {
@@ -4347,6 +4495,9 @@
             },
             {
                 "name": "egg"
+            },
+            {
+                "name": "cooking"
             },
             {
                 "name": "shallow-pan-of-food"
@@ -4385,6 +4536,9 @@
                 "name": "rice-ball"
             },
             {
+                "name": "cooked-rice"
+            },
+            {
                 "name": "curry-rice"
             },
             {
@@ -4409,6 +4563,9 @@
                 "name": "dumpling"
             },
             {
+                "name": "fortune-cookie"
+            },
+            {
                 "name": "takeout-box"
             },
             {
@@ -4422,6 +4579,9 @@
             },
             {
                 "name": "doughnut"
+            },
+            {
+                "name": "cookie"
             },
             {
                 "name": "birthday-cake"
@@ -4449,6 +4609,9 @@
             },
             {
                 "name": "honey-pot"
+            },
+            {
+                "name": "baby-bottle"
             },
             {
                 "name": "glass-of-milk"
@@ -4523,49 +4686,46 @@
                 "name": "jar"
             },
             {
-                "name": "large-orange-diamond"
-            },
-            {
                 "name": "orange-book"
             },
             {
                 "name": "orange-circle"
             },
             {
-                "name": "orange-heart"
+                "name": "orange-square"
             },
             {
-                "name": "orange-square"
+                "name": "large-orange-diamond"
             },
             {
                 "name": "small-orange-diamond"
             },
             {
-                "name": "ear-of-corn"
+                "name": "lime"
             },
             {
-                "name": "meat-on-bone"
+                "name": "croissant"
             },
             {
-                "name": "poultry-leg"
+                "name": "ice"
             },
             {
-                "name": "cooking"
-            },
-            {
-                "name": "cooked-rice"
-            },
-            {
-                "name": "fortune-cookie"
-            },
-            {
-                "name": "cookie"
-            },
-            {
-                "name": "baby-bottle"
+                "name": "amphora"
             }
         ],
         "activities": [
+            {
+                "name": "heart-with-ribbon"
+            },
+            {
+                "name": "speech-balloon"
+            },
+            {
+                "name": "thought-balloon"
+            },
+            {
+                "name": "oil-drum"
+            },
             {
                 "name": "jack-o-lantern"
             },
@@ -4696,6 +4856,9 @@
                 "name": "diving-mask"
             },
             {
+                "name": "running-shirt"
+            },
+            {
                 "name": "sled"
             },
             {
@@ -4729,10 +4892,16 @@
                 "name": "chess-pawn"
             },
             {
+                "name": "flower-playing-cards"
+            },
+            {
                 "name": "performing-arts"
             },
             {
                 "name": "framed-picture"
+            },
+            {
+                "name": "artist-palette"
             },
             {
                 "name": "thread"
@@ -4747,46 +4916,7 @@
                 "name": "knot"
             },
             {
-                "name": "accordion"
-            },
-            {
-                "name": "banjo"
-            },
-            {
-                "name": "control-knobs"
-            },
-            {
-                "name": "drum"
-            },
-            {
-                "name": "flute"
-            },
-            {
-                "name": "guitar"
-            },
-            {
-                "name": "hamsa"
-            },
-            {
-                "name": "headphone"
-            },
-            {
-                "name": "heart-with-ribbon"
-            },
-            {
-                "name": "level-slider"
-            },
-            {
-                "name": "long-drum"
-            },
-            {
-                "name": "maracas"
-            },
-            {
-                "name": "microphone"
-            },
-            {
-                "name": "musical-keyboard"
+                "name": "musical-score"
             },
             {
                 "name": "musical-note"
@@ -4795,25 +4925,31 @@
                 "name": "musical-notes"
             },
             {
-                "name": "musical-score"
+                "name": "studio-microphone"
             },
             {
-                "name": "nazar-amulet"
+                "name": "level-slider"
             },
             {
-                "name": "oil-drum"
+                "name": "control-knobs"
+            },
+            {
+                "name": "microphone"
+            },
+            {
+                "name": "headphone"
             },
             {
                 "name": "saxophone"
             },
             {
-                "name": "speech-balloon"
+                "name": "accordion"
             },
             {
-                "name": "studio-microphone"
+                "name": "guitar"
             },
             {
-                "name": "thought-balloon"
+                "name": "musical-keyboard"
             },
             {
                 "name": "trumpet"
@@ -4822,13 +4958,64 @@
                 "name": "violin"
             },
             {
-                "name": "running-shirt"
+                "name": "banjo"
             },
             {
-                "name": "flower-playing-cards"
+                "name": "drum"
             },
             {
-                "name": "artist-palette"
+                "name": "long-drum"
+            },
+            {
+                "name": "maracas"
+            },
+            {
+                "name": "flute"
+            },
+            {
+                "name": "nazar-amulet"
+            },
+            {
+                "name": "hamsa"
+            },
+            {
+                "name": "flag-in-hole"
+            },
+            {
+                "name": "skis"
+            },
+            {
+                "name": "bullseye"
+            },
+            {
+                "name": "water-pistol"
+            },
+            {
+                "name": "crystal-ball"
+            },
+            {
+                "name": "puzzle-piece"
+            },
+            {
+                "name": "mirror-ball"
+            },
+            {
+                "name": "nesting-dolls"
+            },
+            {
+                "name": "spade-suit"
+            },
+            {
+                "name": "heart-suit"
+            },
+            {
+                "name": "diamond-suit"
+            },
+            {
+                "name": "club-suit"
+            },
+            {
+                "name": "joker"
             }
         ],
         "travel": [
@@ -5031,6 +5218,15 @@
                 "name": "ambulance"
             },
             {
+                "name": "police-car",
+                "tones": [
+                    "police-car-light"
+                ]
+            },
+            {
+                "name": "oncoming-police-car"
+            },
+            {
                 "name": "taxi"
             },
             {
@@ -5157,60 +5353,6 @@
                 "name": "luggage"
             },
             {
-                "name": "atm-sign"
-            },
-            {
-                "name": "baggage-claim"
-            },
-            {
-                "name": "customs"
-            },
-            {
-                "name": "female-sign"
-            },
-            {
-                "name": "fountain-pen"
-            },
-            {
-                "name": "heavy-dollar-sign"
-            },
-            {
-                "name": "heavy-equals-sign"
-            },
-            {
-                "name": "left-luggage"
-            },
-            {
-                "name": "litter-in-bin-sign"
-            },
-            {
-                "name": "male-sign"
-            },
-            {
-                "name": "moai"
-            },
-            {
-                "name": "passport-control"
-            },
-            {
-                "name": "red-paper-lantern"
-            },
-            {
-                "name": "wheel-of-dharma"
-            },
-            {
-                "name": "wheelchair-symbol"
-            },
-            {
-                "name": "police-car",
-                "tones": [
-                    "police-car-light"
-                ]
-            },
-            {
-                "name": "oncoming-police-car"
-            },
-            {
                 "name": "new-moon-face"
             },
             {
@@ -5230,16 +5372,1537 @@
             },
             {
                 "name": "water-wave"
+            },
+            {
+                "name": "red-paper-lantern"
+            },
+            {
+                "name": "fountain-pen"
+            },
+            {
+                "name": "moai"
+            },
+            {
+                "name": "atm-sign"
+            },
+            {
+                "name": "litter-in-bin-sign"
+            },
+            {
+                "name": "wheelchair-symbol"
+            },
+            {
+                "name": "passport-control"
+            },
+            {
+                "name": "customs"
+            },
+            {
+                "name": "baggage-claim"
+            },
+            {
+                "name": "left-luggage"
+            },
+            {
+                "name": "wheel-of-dharma"
+            },
+            {
+                "name": "female-sign"
+            },
+            {
+                "name": "male-sign"
+            },
+            {
+                "name": "heavy-equals-sign"
+            },
+            {
+                "name": "heavy-dollar-sign"
+            },
+            {
+                "name": "national-park"
+            },
+            {
+                "name": "houses"
+            },
+            {
+                "name": "tent"
+            },
+            {
+                "name": "foggy"
+            },
+            {
+                "name": "playground-slide"
+            },
+            {
+                "name": "circus-tent"
+            },
+            {
+                "name": "light-rail"
+            },
+            {
+                "name": "motorway"
+            },
+            {
+                "name": "railway-track"
+            },
+            {
+                "name": "ring-buoy"
+            },
+            {
+                "name": "parachute"
+            },
+            {
+                "name": "seat"
+            },
+            {
+                "name": "satellite"
+            },
+            {
+                "name": "bellhop-bell"
+            },
+            {
+                "name": "hourglass-done"
+            },
+            {
+                "name": "hourglass-not-done"
+            },
+            {
+                "name": "watch"
+            },
+            {
+                "name": "alarm-clock"
+            },
+            {
+                "name": "stopwatch"
+            },
+            {
+                "name": "timer-clock"
+            },
+            {
+                "name": "mantelpiece-clock"
+            },
+            {
+                "name": "twelve-oclock"
+            },
+            {
+                "name": "twelve-thirty"
+            },
+            {
+                "name": "one-oclock"
+            },
+            {
+                "name": "one-thirty"
+            },
+            {
+                "name": "two-oclock"
+            },
+            {
+                "name": "two-thirty"
+            },
+            {
+                "name": "three-oclock"
+            },
+            {
+                "name": "three-thirty"
+            },
+            {
+                "name": "four-oclock"
+            },
+            {
+                "name": "four-thirty"
+            },
+            {
+                "name": "five-oclock"
+            },
+            {
+                "name": "five-thirty"
+            },
+            {
+                "name": "six-oclock"
+            },
+            {
+                "name": "six-thirty"
+            },
+            {
+                "name": "seven-oclock"
+            },
+            {
+                "name": "seven-thirty"
+            },
+            {
+                "name": "eight-oclock"
+            },
+            {
+                "name": "eight-thirty"
+            },
+            {
+                "name": "nine-oclock"
+            },
+            {
+                "name": "nine-thirty"
+            },
+            {
+                "name": "ten-oclock"
+            },
+            {
+                "name": "ten-thirty"
+            },
+            {
+                "name": "eleven-oclock"
+            },
+            {
+                "name": "eleven-thirty"
+            },
+            {
+                "name": "thermometer"
+            },
+            {
+                "name": "ringed-planet"
+            },
+            {
+                "name": "milky-way"
+            },
+            {
+                "name": "cyclone"
+            },
+            {
+                "name": "closed-umbrella"
+            },
+            {
+                "name": "umbrella"
+            },
+            {
+                "name": "umbrella-on-ground"
+            },
+            {
+                "name": "high-voltage"
             }
         ],
         "objects": [
-            
+            {
+                "name": "glasses"
+            },
+            {
+                "name": "sunglasses"
+            },
+            {
+                "name": "goggles"
+            },
+            {
+                "name": "lab-coat"
+            },
+            {
+                "name": "safety-vest"
+            },
+            {
+                "name": "necktie"
+            },
+            {
+                "name": "t-shirt"
+            },
+            {
+                "name": "jeans"
+            },
+            {
+                "name": "scarf"
+            },
+            {
+                "name": "gloves"
+            },
+            {
+                "name": "coat"
+            },
+            {
+                "name": "socks"
+            },
+            {
+                "name": "dress"
+            },
+            {
+                "name": "kimono"
+            },
+            {
+                "name": "sari"
+            },
+            {
+                "name": "one-piece-swimsuit"
+            },
+            {
+                "name": "briefs"
+            },
+            {
+                "name": "shorts"
+            },
+            {
+                "name": "bikini"
+            },
+            {
+                "name": "womans-clothes"
+            },
+            {
+                "name": "folding-hand-fan"
+            },
+            {
+                "name": "purse"
+            },
+            {
+                "name": "handbag"
+            },
+            {
+                "name": "clutch-bag"
+            },
+            {
+                "name": "shopping-bags"
+            },
+            {
+                "name": "backpack"
+            },
+            {
+                "name": "thong-sandal"
+            },
+            {
+                "name": "mans-shoe"
+            },
+            {
+                "name": "running-shoe"
+            },
+            {
+                "name": "hiking-boot"
+            },
+            {
+                "name": "flat-shoe"
+            },
+            {
+                "name": "high-heeled-shoe"
+            },
+            {
+                "name": "womans-sandal"
+            },
+            {
+                "name": "ballet-shoes"
+            },
+            {
+                "name": "womans-boot"
+            },
+            {
+                "name": "hair-pick"
+            },
+            {
+                "name": "crown"
+            },
+            {
+                "name": "womans-hat"
+            },
+            {
+                "name": "top-hat"
+            },
+            {
+                "name": "graduation-cap"
+            },
+            {
+                "name": "billed-cap"
+            },
+            {
+                "name": "military-helmet"
+            },
+            {
+                "name": "rescue-workers-helmet"
+            },
+            {
+                "name": "prayer-beads"
+            },
+            {
+                "name": "lipstick"
+            },
+            {
+                "name": "ring"
+            },
+            {
+                "name": "gem-stone"
+            },
+            {
+                "name": "muted-speaker"
+            },
+            {
+                "name": "speaker-low-volume"
+            },
+            {
+                "name": "speaker-medium-volume"
+            },
+            {
+                "name": "speaker-high-volume"
+            },
+            {
+                "name": "loudspeaker"
+            },
+            {
+                "name": "megaphone"
+            },
+            {
+                "name": "postal-horn"
+            },
+            {
+                "name": "bell"
+            },
+            {
+                "name": "bell-with-slash"
+            },
+            {
+                "name": "radio"
+            },
+            {
+                "name": "mobile-phone"
+            },
+            {
+                "name": "mobile-phone-with-arrow"
+            },
+            {
+                "name": "telephone"
+            },
+            {
+                "name": "telephone-receiver"
+            },
+            {
+                "name": "pager"
+            },
+            {
+                "name": "fax-machine"
+            },
+            {
+                "name": "battery"
+            },
+            {
+                "name": "low-battery"
+            },
+            {
+                "name": "electric-plug"
+            },
+            {
+                "name": "laptop"
+            },
+            {
+                "name": "desktop-computer"
+            },
+            {
+                "name": "printer"
+            },
+            {
+                "name": "keyboard"
+            },
+            {
+                "name": "trackball"
+            },
+            {
+                "name": "computer-disk"
+            },
+            {
+                "name": "floppy-disk"
+            },
+            {
+                "name": "optical-disk"
+            },
+            {
+                "name": "dvd"
+            },
+            {
+                "name": "abacus"
+            },
+            {
+                "name": "movie-camera"
+            },
+            {
+                "name": "film-frames"
+            },
+            {
+                "name": "film-projector"
+            },
+            {
+                "name": "clapper-board"
+            },
+            {
+                "name": "television"
+            },
+            {
+                "name": "camera"
+            },
+            {
+                "name": "camera-with-flash"
+            },
+            {
+                "name": "video-camera"
+            },
+            {
+                "name": "videocassette"
+            },
+            {
+                "name": "magnifying-glass-tilted-left"
+            },
+            {
+                "name": "magnifying-glass-tilted-right"
+            },
+            {
+                "name": "candle"
+            },
+            {
+                "name": "light-bulb"
+            },
+            {
+                "name": "flashlight"
+            },
+            {
+                "name": "diya-lamp"
+            },
+            {
+                "name": "notebook-with-decorative-cover"
+            },
+            {
+                "name": "closed-book"
+            },
+            {
+                "name": "open-book"
+            },
+            {
+                "name": "green-book"
+            },
+            {
+                "name": "blue-book"
+            },
+            {
+                "name": "books"
+            },
+            {
+                "name": "notebook"
+            },
+            {
+                "name": "ledger"
+            },
+            {
+                "name": "page-with-curl"
+            },
+            {
+                "name": "scroll"
+            },
+            {
+                "name": "page-facing-up"
+            },
+            {
+                "name": "newspaper"
+            },
+            {
+                "name": "rolled-up-newspaper"
+            },
+            {
+                "name": "bookmark-tabs"
+            },
+            {
+                "name": "bookmark"
+            },
+            {
+                "name": "label"
+            },
+            {
+                "name": "money-bag"
+            },
+            {
+                "name": "coin"
+            },
+            {
+                "name": "yen-banknote"
+            },
+            {
+                "name": "dollar-banknote"
+            },
+            {
+                "name": "euro-banknote"
+            },
+            {
+                "name": "pound-banknote"
+            },
+            {
+                "name": "money-with-wings"
+            },
+            {
+                "name": "credit-card"
+            },
+            {
+                "name": "receipt"
+            },
+            {
+                "name": "chart-increasing-with-yen"
+            },
+            {
+                "name": "envelope"
+            },
+            {
+                "name": "e-mail"
+            },
+            {
+                "name": "incoming-envelope"
+            },
+            {
+                "name": "envelope-with-arrow"
+            },
+            {
+                "name": "outbox-tray"
+            },
+            {
+                "name": "inbox-tray"
+            },
+            {
+                "name": "package"
+            },
+            {
+                "name": "closed-mailbox-with-raised-flag"
+            },
+            {
+                "name": "closed-mailbox-with-lowered-flag"
+            },
+            {
+                "name": "open-mailbox-with-raised-flag"
+            },
+            {
+                "name": "open-mailbox-with-lowered-flag"
+            },
+            {
+                "name": "postbox"
+            },
+            {
+                "name": "ballot-box-with-ballot"
+            },
+            {
+                "name": "pencil"
+            },
+            {
+                "name": "black-nib"
+            },
+            {
+                "name": "pen"
+            },
+            {
+                "name": "paintbrush"
+            },
+            {
+                "name": "crayon"
+            },
+            {
+                "name": "memo"
+            },
+            {
+                "name": "briefcase"
+            },
+            {
+                "name": "file-folder"
+            },
+            {
+                "name": "open-file-folder"
+            },
+            {
+                "name": "card-index-dividers"
+            },
+            {
+                "name": "calendar"
+            },
+            {
+                "name": "tear-off-calendar"
+            },
+            {
+                "name": "spiral-notepad"
+            },
+            {
+                "name": "spiral-calendar"
+            },
+            {
+                "name": "card-index"
+            },
+            {
+                "name": "chart-increasing"
+            },
+            {
+                "name": "chart-decreasing"
+            },
+            {
+                "name": "bar-chart"
+            },
+            {
+                "name": "clipboard"
+            },
+            {
+                "name": "pushpin"
+            },
+            {
+                "name": "round-pushpin"
+            },
+            {
+                "name": "paperclip"
+            },
+            {
+                "name": "linked-paperclips"
+            },
+            {
+                "name": "straight-ruler"
+            },
+            {
+                "name": "triangular-ruler"
+            },
+            {
+                "name": "scissors"
+            },
+            {
+                "name": "card-file-box"
+            },
+            {
+                "name": "file-cabinet"
+            },
+            {
+                "name": "wastebasket"
+            },
+            {
+                "name": "locked"
+            },
+            {
+                "name": "unlocked"
+            },
+            {
+                "name": "locked-with-pen"
+            },
+            {
+                "name": "locked-with-key"
+            },
+            {
+                "name": "key"
+            },
+            {
+                "name": "old-key"
+            },
+            {
+                "name": "hammer"
+            },
+            {
+                "name": "axe"
+            },
+            {
+                "name": "pick"
+            },
+            {
+                "name": "hammer-and-pick"
+            },
+            {
+                "name": "hammer-and-wrench"
+            },
+            {
+                "name": "dagger"
+            },
+            {
+                "name": "crossed-swords"
+            },
+            {
+                "name": "bomb"
+            },
+            {
+                "name": "boomerang"
+            },
+            {
+                "name": "bow-and-arrow"
+            },
+            {
+                "name": "shield"
+            },
+            {
+                "name": "carpentry-saw"
+            },
+            {
+                "name": "wrench"
+            },
+            {
+                "name": "screwdriver"
+            },
+            {
+                "name": "nut-and-bolt"
+            },
+            {
+                "name": "gear"
+            },
+            {
+                "name": "clamp"
+            },
+            {
+                "name": "balance-scale"
+            },
+            {
+                "name": "white-cane"
+            },
+            {
+                "name": "link"
+            },
+            {
+                "name": "broken-chain"
+            },
+            {
+                "name": "chains"
+            },
+            {
+                "name": "hook"
+            },
+            {
+                "name": "toolbox"
+            },
+            {
+                "name": "magnet"
+            },
+            {
+                "name": "ladder"
+            },
+            {
+                "name": "alembic"
+            },
+            {
+                "name": "test-tube"
+            },
+            {
+                "name": "petri-dish"
+            },
+            {
+                "name": "microscope"
+            },
+            {
+                "name": "telescope"
+            },
+            {
+                "name": "satellite-antenna"
+            },
+            {
+                "name": "syringe"
+            },
+            {
+                "name": "pill"
+            },
+            {
+                "name": "adhesive-bandage"
+            },
+            {
+                "name": "crutch"
+            },
+            {
+                "name": "stethoscope"
+            },
+            {
+                "name": "x-ray"
+            },
+            {
+                "name": "door"
+            },
+            {
+                "name": "elevator"
+            },
+            {
+                "name": "mirror"
+            },
+            {
+                "name": "window"
+            },
+            {
+                "name": "bed"
+            },
+            {
+                "name": "couch-and-lamp"
+            },
+            {
+                "name": "chair"
+            },
+            {
+                "name": "toilet"
+            },
+            {
+                "name": "plunger"
+            },
+            {
+                "name": "shower"
+            },
+            {
+                "name": "bathtub"
+            },
+            {
+                "name": "razor"
+            },
+            {
+                "name": "lotion-bottle"
+            },
+            {
+                "name": "safety-pin"
+            },
+            {
+                "name": "broom"
+            },
+            {
+                "name": "basket"
+            },
+            {
+                "name": "roll-of-paper"
+            },
+            {
+                "name": "bucket"
+            },
+            {
+                "name": "soap"
+            },
+            {
+                "name": "bubbles"
+            },
+            {
+                "name": "toothbrush"
+            },
+            {
+                "name": "sponge"
+            },
+            {
+                "name": "shopping-cart"
+            },
+            {
+                "name": "cigarette"
+            },
+            {
+                "name": "coffin"
+            },
+            {
+                "name": "headstone"
+            },
+            {
+                "name": "funeral-urn"
+            },
+            {
+                "name": "placard"
+            },
+            {
+                "name": "identification-card"
+            }
         ],
         "symbols": [
-            
+            {
+                "name": "potable-water"
+            },
+            {
+                "name": "mens-room"
+            },
+            {
+                "name": "womens-room"
+            },
+            {
+                "name": "restroom"
+            },
+            {
+                "name": "baby-symbol"
+            },
+            {
+                "name": "water-closet"
+            },
+            {
+                "name": "warning"
+            },
+            {
+                "name": "children-crossing"
+            },
+            {
+                "name": "no-entry"
+            },
+            {
+                "name": "prohibited"
+            },
+            {
+                "name": "no-bicycles"
+            },
+            {
+                "name": "no-smoking"
+            },
+            {
+                "name": "no-littering"
+            },
+            {
+                "name": "non-potable-water"
+            },
+            {
+                "name": "no-pedestrians"
+            },
+            {
+                "name": "no-mobile-phones"
+            },
+            {
+                "name": "no-one-under-eighteen"
+            },
+            {
+                "name": "radioactive"
+            },
+            {
+                "name": "biohazard"
+            },
+            {
+                "name": "up-arrow"
+            },
+            {
+                "name": "up-right-arrow"
+            },
+            {
+                "name": "right-arrow"
+            },
+            {
+                "name": "down-right-arrow"
+            },
+            {
+                "name": "down-arrow"
+            },
+            {
+                "name": "down-left-arrow"
+            },
+            {
+                "name": "left-arrow"
+            },
+            {
+                "name": "up-left-arrow"
+            },
+            {
+                "name": "up-down-arrow"
+            },
+            {
+                "name": "left-right-arrow"
+            },
+            {
+                "name": "right-arrow-curving-left"
+            },
+            {
+                "name": "left-arrow-curving-right"
+            },
+            {
+                "name": "right-arrow-curving-up"
+            },
+            {
+                "name": "right-arrow-curving-down"
+            },
+            {
+                "name": "clockwise-vertical-arrows"
+            },
+            {
+                "name": "counterclockwise-arrows-button"
+            },
+            {
+                "name": "back-arrow"
+            },
+            {
+                "name": "end-arrow"
+            },
+            {
+                "name": "on-arrow"
+            },
+            {
+                "name": "soon-arrow"
+            },
+            {
+                "name": "top-arrow"
+            },
+            {
+                "name": "place-of-worship"
+            },
+            {
+                "name": "atom-symbol"
+            },
+            {
+                "name": "om"
+            },
+            {
+                "name": "yin-yang"
+            },
+            {
+                "name": "latin-cross"
+            },
+            {
+                "name": "orthodox-cross"
+            },
+            {
+                "name": "peace-symbol"
+            },
+            {
+                "name": "menorah"
+            },
+            {
+                "name": "khanda"
+            },
+            {
+                "name": "aries"
+            },
+            {
+                "name": "taurus"
+            },
+            {
+                "name": "gemini"
+            },
+            {
+                "name": "cancer"
+            },
+            {
+                "name": "leo"
+            },
+            {
+                "name": "virgo"
+            },
+            {
+                "name": "libra"
+            },
+            {
+                "name": "scorpio"
+            },
+            {
+                "name": "sagittarius"
+            },
+            {
+                "name": "capricorn"
+            },
+            {
+                "name": "aquarius"
+            },
+            {
+                "name": "pisces"
+            },
+            {
+                "name": "ophiuchus"
+            },
+            {
+                "name": "shuffle-tracks-button"
+            },
+            {
+                "name": "repeat-button"
+            },
+            {
+                "name": "repeat-single-button"
+            },
+            {
+                "name": "play-button"
+            },
+            {
+                "name": "fast-forward-button"
+            },
+            {
+                "name": "next-track-button"
+            },
+            {
+                "name": "play-or-pause-button"
+            },
+            {
+                "name": "reverse-button"
+            },
+            {
+                "name": "fast-reverse-button"
+            },
+            {
+                "name": "last-track-button"
+            },
+            {
+                "name": "upwards-button"
+            },
+            {
+                "name": "fast-up-button"
+            },
+            {
+                "name": "downwards-button"
+            },
+            {
+                "name": "fast-down-button"
+            },
+            {
+                "name": "pause-button"
+            },
+            {
+                "name": "stop-button"
+            },
+            {
+                "name": "record-button"
+            },
+            {
+                "name": "eject-button"
+            },
+            {
+                "name": "cinema"
+            },
+            {
+                "name": "dim-button"
+            },
+            {
+                "name": "bright-button"
+            },
+            {
+                "name": "antenna-bars"
+            },
+            {
+                "name": "wireless"
+            },
+            {
+                "name": "vibration-mode"
+            },
+            {
+                "name": "mobile-phone-off"
+            },
+            {
+                "name": "transgender-symbol"
+            },
+            {
+                "name": "multiply"
+            },
+            {
+                "name": "plus"
+            },
+            {
+                "name": "minus"
+            },
+            {
+                "name": "divide"
+            },
+            {
+                "name": "infinity"
+            },
+            {
+                "name": "double-exclamation-mark"
+            },
+            {
+                "name": "exclamation-question-mark"
+            },
+            {
+                "name": "red-question-mark"
+            },
+            {
+                "name": "white-question-mark"
+            },
+            {
+                "name": "white-exclamation-mark"
+            },
+            {
+                "name": "red-exclamation-mark"
+            },
+            {
+                "name": "wavy-dash"
+            },
+            {
+                "name": "currency-exchange"
+            },
+            {
+                "name": "medical-symbol"
+            },
+            {
+                "name": "recycling-symbol"
+            },
+            {
+                "name": "fleur-de-lis"
+            },
+            {
+                "name": "trident-emblem"
+            },
+            {
+                "name": "name-badge"
+            },
+            {
+                "name": "japanese-symbol-for-beginner"
+            },
+            {
+                "name": "hollow-red-circle"
+            },
+            {
+                "name": "check-mark-button"
+            },
+            {
+                "name": "check-box-with-check"
+            },
+            {
+                "name": "check-mark"
+            },
+            {
+                "name": "cross-mark"
+            },
+            {
+                "name": "cross-mark-button"
+            },
+            {
+                "name": "curly-loop"
+            },
+            {
+                "name": "double-curly-loop"
+            },
+            {
+                "name": "part-alternation-mark"
+            },
+            {
+                "name": "eight-spoked-asterisk"
+            },
+            {
+                "name": "sparkle"
+            },
+            {
+                "name": "copyright"
+            },
+            {
+                "name": "registered"
+            },
+            {
+                "name": "trade-mark"
+            },
+            {
+                "name": "keycap-0"
+            },
+            {
+                "name": "keycap-1"
+            },
+            {
+                "name": "keycap-2"
+            },
+            {
+                "name": "keycap-3"
+            },
+            {
+                "name": "keycap-4"
+            },
+            {
+                "name": "keycap-5"
+            },
+            {
+                "name": "keycap-6"
+            },
+            {
+                "name": "keycap-7"
+            },
+            {
+                "name": "keycap-8"
+            },
+            {
+                "name": "keycap-9"
+            },
+            {
+                "name": "keycap-10"
+            },
+            {
+                "name": "input-latin-uppercase"
+            },
+            {
+                "name": "input-latin-lowercase"
+            },
+            {
+                "name": "input-numbers"
+            },
+            {
+                "name": "input-symbols"
+            },
+            {
+                "name": "input-latin-letters"
+            },
+            {
+                "name": "a-button-blood-type"
+            },
+            {
+                "name": "ab-button-blood-type"
+            },
+            {
+                "name": "b-button-blood-type"
+            },
+            {
+                "name": "cl-button"
+            },
+            {
+                "name": "cool-button"
+            },
+            {
+                "name": "free-button"
+            },
+            {
+                "name": "information"
+            },
+            {
+                "name": "id-button"
+            },
+            {
+                "name": "circled-m"
+            },
+            {
+                "name": "new-button"
+            },
+            {
+                "name": "ng-button"
+            },
+            {
+                "name": "o-button-blood-type"
+            },
+            {
+                "name": "ok-button"
+            },
+            {
+                "name": "p-button"
+            },
+            {
+                "name": "sos-button"
+            },
+            {
+                "name": "up-button"
+            },
+            {
+                "name": "vs-button"
+            },
+            {
+                "name": "japanese-here-button"
+            },
+            {
+                "name": "japanese-service-charge-button"
+            },
+            {
+                "name": "japanese-monthly-amount-button"
+            },
+            {
+                "name": "japanese-not-free-of-charge-button"
+            },
+            {
+                "name": "japanese-reserved-button"
+            },
+            {
+                "name": "japanese-bargain-button"
+            },
+            {
+                "name": "japanese-discount-button"
+            },
+            {
+                "name": "japanese-free-of-charge-button"
+            },
+            {
+                "name": "japanese-prohibited-button"
+            },
+            {
+                "name": "japanese-acceptable-button"
+            },
+            {
+                "name": "japanese-application-button"
+            },
+            {
+                "name": "japanese-passing-grade-button"
+            },
+            {
+                "name": "japanese-vacancy-button"
+            },
+            {
+                "name": "japanese-congratulations-button"
+            },
+            {
+                "name": "japanese-secret-button"
+            },
+            {
+                "name": "japanese-open-for-business-button"
+            },
+            {
+                "name": "japanese-no-vacancy-button"
+            },
+            {
+                "name": "red-circle"
+            },
+            {
+                "name": "yellow-circle"
+            },
+            {
+                "name": "green-circle"
+            },
+            {
+                "name": "blue-circle"
+            },
+            {
+                "name": "purple-circle"
+            },
+            {
+                "name": "brown-circle"
+            },
+            {
+                "name": "black-circle"
+            },
+            {
+                "name": "white-circle"
+            },
+            {
+                "name": "red-square"
+            },
+            {
+                "name": "yellow-square"
+            },
+            {
+                "name": "green-square"
+            },
+            {
+                "name": "blue-square"
+            },
+            {
+                "name": "purple-square"
+            },
+            {
+                "name": "brown-square"
+            },
+            {
+                "name": "black-large-square"
+            },
+            {
+                "name": "white-large-square"
+            },
+            {
+                "name": "black-medium-square"
+            },
+            {
+                "name": "white-medium-square"
+            },
+            {
+                "name": "black-medium-small-square"
+            },
+            {
+                "name": "white-medium-small-square"
+            },
+            {
+                "name": "black-small-square"
+            },
+            {
+                "name": "white-small-square"
+            },
+            {
+                "name": "large-blue-diamond"
+            },
+            {
+                "name": "small-blue-diamond"
+            },
+            {
+                "name": "red-triangle-pointed-down"
+            },
+            {
+                "name": "diamond-with-a-dot"
+            },
+            {
+                "name": "radio-button"
+            },
+            {
+                "name": "white-square-button"
+            },
+            {
+                "name": "black-square-button"
+            }
         ],
         "flags": [
-            
+            {
+                "name": "chequered-flag"
+            },
+            {
+                "name": "triangular-flag"
+            },
+            {
+                "name": "crossed-flags"
+            },
+            {
+                "name": "black-flag"
+            },
+            {
+                "name": "white-flag"
+            },
+            {
+                "name": "rainbow-flag"
+            },
+            {
+                "name": "transgender-flag"
+            },
+            {
+                "name": "pirate-flag"
+            }
         ]
     }
 }

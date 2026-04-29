@@ -158,14 +158,12 @@ unset($entries);
 /* -------------------------------------------------------------------------
  * Reorder categories.
  *
- * For "people": preserve the first $people_keep_count entries (the user's
- * curated head), then append the remaining entries in canonical order.
- * For all other categories: full reorder.
- *
- * Entries whose slug is not found in the canonical list are kept at the
- * very end of their category (preserves their relative current order).
+ * People is treated as the user's authoritative hand-curated list and
+ * never reordered — we only ever ADD missing entries to it (in the
+ * "fill from disk" pass below). All other categories are sorted by
+ * canonical Unicode order; entries whose slug isn't in the canonical
+ * list are kept at the end (preserves their relative current order).
  * ----------------------------------------------------------------------- */
-$people_keep_count = 267;
 $summary = [];
 
 foreach ($m['categories'] as $cat => &$entries) {
@@ -174,19 +172,20 @@ foreach ($m['categories'] as $cat => &$entries) {
         continue;
     }
 
-    $head = [];
-    $body = $entries;
     if ($cat === 'people') {
-        $head = array_slice($entries, 0, $people_keep_count);
-        $body = array_slice($entries, $people_keep_count);
-        $head_slugs = [];
-        foreach ($head as $e) $head_slugs[$e['name']] = true;
-        $body = array_values(array_filter($body, fn($e) => !isset($head_slugs[$e['name']])));
+        // Preserve user's order verbatim; don't sort.
+        $summary[$cat] = [
+            'total'     => count($entries),
+            'matched'   => 0,
+            'kept_head' => count($entries),
+            'unmatched' => 0,
+        ];
+        continue;
     }
 
     $matched   = [];
     $unmatched = [];
-    foreach ($body as $e) {
+    foreach ($entries as $e) {
         if (isset($global_index[$e['name']])) {
             $matched[] = [$global_index[$e['name']], $e];
         } else {
@@ -196,12 +195,12 @@ foreach ($m['categories'] as $cat => &$entries) {
     usort($matched, fn($a, $b) => $a[0] <=> $b[0]);
     $sorted = array_map(fn($p) => $p[1], $matched);
 
-    $entries = array_merge($head, $sorted, $unmatched);
+    $entries = array_merge($sorted, $unmatched);
 
     $summary[$cat] = [
         'total'     => count($entries),
         'matched'   => count($matched),
-        'kept_head' => count($head),
+        'kept_head' => 0,
         'unmatched' => count($unmatched),
     ];
 }
@@ -280,6 +279,7 @@ foreach ($cat_to_groups as $cat => $groups) {
  * ----------------------------------------------------------------------- */
 $m['version']   = '1.1.0';
 $m['generated'] = date('c');
+$m['total']     = array_sum(array_map('count', $m['categories']));
 
 file_put_contents(
     $manifest_path,
