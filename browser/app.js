@@ -35,12 +35,43 @@
         return '';
     }
 
+    // Default style per icon set
+    const DEFAULT_STYLE = {
+        'material-symbols-light': 'regular',
+        'material-design': 'regular',
+    };
+
+    // Per-set sidebar style options [value, label]
+    const STYLE_OPTIONS = {
+        'material-symbols-light': [
+            ['regular', 'Regular'],
+            ['rounded', 'Rounded'],
+            ['sharp', 'Sharp'],
+            ['outline', 'Outline'],
+            ['outline-rounded', 'Outline Rounded'],
+            ['outline-sharp', 'Outline Sharp'],
+        ],
+        'material-design': [
+            ['regular', 'Regular'],
+            ['box', 'Box'],
+            ['circle', 'Circle'],
+            ['outline', 'Outline'],
+            ['outline-box', 'Outline Box'],
+            ['outline-circle', 'Outline Circle'],
+        ],
+    };
+
     const state = {
         set: 'fluent-emoji',
-        manifests: { 'fluent-emoji': null, 'material-symbols-light': null },
+        manifests: { 'fluent-emoji': null, 'material-symbols-light': null, 'material-design': null },
         category: null,
         style: 'regular',
         query: '',
+        // Cross-folder search filter (active only when query AND folders.size > 0)
+        filter: {
+            folders: new Set(),
+            cats: { 'fluent-emoji': new Set(), 'material-symbols-light': new Set(), 'material-design': new Set() },
+        },
     };
 
     const $ = (sel) => document.querySelector(sel);
@@ -81,6 +112,7 @@
         if (state.set === set && state.manifests[set]) return;
         state.set = set;
         state.category = null;
+        state.style = DEFAULT_STYLE[set] || 'regular';
         state.query = '';
         search.value = '';
         tabs.forEach(t => t.classList.toggle('is-active', t.dataset.set === set));
@@ -108,14 +140,7 @@
             });
         } else {
             appendSidebarHeader('Filter by style');
-            [
-                ['regular', 'Regular'],
-                ['rounded', 'Rounded'],
-                ['sharp', 'Sharp'],
-                ['outline', 'Outline'],
-                ['outline-rounded', 'Outline Rounded'],
-                ['outline-sharp', 'Outline Sharp'],
-            ].forEach(([val, label]) => {
+            (STYLE_OPTIONS[state.set] || []).forEach(([val, label]) => {
                 sidebar.appendChild(catBtn(label, val, 'style'));
             });
         }
@@ -170,9 +195,39 @@
             });
             return out;
         }
+        // Material Symbols / Material Design — same shape: m.icons[name] = [styles]
         return Object.entries(m.icons)
             .filter(([_, styles]) => styles.includes(state.style))
             .map(([name]) => ({ name }));
+    }
+
+    /* Cross-folder filtered search (active when query + filter.folders set) */
+    function getFilterItems(query) {
+        const out = [];
+        state.filter.folders.forEach(folder => {
+            const m = state.manifests[folder];
+            if (!m) return; // manifest still loading
+            const sel = state.filter.cats[folder] || new Set();
+            const useAllCats = sel.size === 0;
+            if (folder === 'fluent-emoji') {
+                const cats = useAllCats ? Object.keys(m.categories) : [...sel];
+                cats.forEach(cat => {
+                    (m.categories[cat] || []).forEach(e => {
+                        if (e.name.indexOf(query) === -1 && !(e.unicode && e.unicode.indexOf(query) !== -1)) return;
+                        expandTones(e).forEach(v => out.push(Object.assign({ _set: 'fluent-emoji', _cat: cat }, v)));
+                    });
+                });
+            } else {
+                const styles = useAllCats ? m.styles : [...sel];
+                Object.entries(m.icons).forEach(([name, available]) => {
+                    if (name.indexOf(query) === -1) return;
+                    styles.forEach(style => {
+                        if (available.includes(style)) out.push({ name, _set: folder, _style: style });
+                    });
+                });
+            }
+        });
+        return out;
     }
 
     /* Render grid (incremental) -------------------------------------------- */
@@ -183,16 +238,23 @@
     function render() {
         renderToken++;
         const my = renderToken;
-        let items = getItems();
         const q = state.query.trim().toLowerCase();
-        if (q) items = items.filter(e =>
-            e.name.indexOf(q) !== -1 || (e.unicode && e.unicode.indexOf(q) !== -1)
-        );
+        let items;
+        const filterActive = q && state.filter.folders.size > 0;
+        if (filterActive) {
+            items = getFilterItems(q);
+        } else {
+            items = getItems();
+            if (q) items = items.filter(e =>
+                e.name.indexOf(q) !== -1 || (e.unicode && e.unicode.indexOf(q) !== -1)
+            );
+        }
         renderedItems = items;
         grid.innerHTML = '';
         empty.hidden = items.length > 0;
         appendChunk(0, my);
-        stats.textContent = `${items.length.toLocaleString()} ${state.set === 'fluent-emoji' ? 'emoji' : 'icons'}`;
+        const label = filterActive ? 'results' : (state.set === 'fluent-emoji' ? 'emoji' : 'icons');
+        stats.textContent = `${items.length.toLocaleString()} ${label}`;
     }
 
     function appendChunk(start, token) {
@@ -218,13 +280,16 @@
 
     /* URL / item element --------------------------------------------------- */
     function svgUrl(item) {
-        if (state.set === 'fluent-emoji') {
+        const source = item._set || state.set;
+        if (source === 'fluent-emoji') {
             // _tone (when set) is already the full filename (e.g. "waving-hand-medium-light")
             const fname = item._tone || item.name;
             return `${CDN}/fluent-emoji/svg/${fname}.svg`;
         }
-        const suffix = state.manifests['material-symbols-light'].styleSuffix[state.style];
-        return `${CDN}/material-symbols-light/svg/${item.name}${suffix}.svg`;
+        const m = state.manifests[source];
+        const style = item._style || state.style;
+        const suffix = m.styleSuffix[style] || '';
+        return `${CDN}/${source}/svg/${item.name}${suffix}.svg`;
     }
 
     function itemEl(item) {
@@ -239,7 +304,8 @@
         tooltip.textContent = item.name;
         div.appendChild(tooltip);
 
-        const isFluent = state.set === 'fluent-emoji';
+        const source = item._set || state.set;
+        const isFluent = source === 'fluent-emoji';
         let copyText;
 
         if (isFluent && item._tone) {
@@ -437,6 +503,82 @@
 
     /* Tabs ----------------------------------------------------------------- */
     tabs.forEach(t => t.addEventListener('click', () => switchSet(t.dataset.set)));
+
+    /* Search filter (folder + category checkboxes) -------------------------- */
+    const filterBtn   = $('#search-filter-btn');
+    const filterPanel = $('#search-filter-panel');
+    const filterAll   = $('#filter-all');
+    const folderCheckboxes = filterPanel.querySelectorAll('input[type=checkbox][data-folder]');
+
+    filterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = filterPanel.hidden;
+        filterPanel.hidden = !willOpen;
+        filterBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+    document.addEventListener('mousedown', (e) => {
+        if (filterPanel.hidden) return;
+        if (filterPanel.contains(e.target) || filterBtn.contains(e.target)) return;
+        filterPanel.hidden = true;
+        filterBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    folderCheckboxes.forEach(cb => {
+        cb.addEventListener('change', async () => {
+            const folder = cb.dataset.folder;
+            const subWrap = filterPanel.querySelector(`.filter-folder[data-folder="${folder}"] .filter-cats`);
+            if (cb.checked) {
+                state.filter.folders.add(folder);
+                filterAll.checked = false;
+                try { await loadManifest(folder); } catch (_) { return; }
+                renderFolderCats(folder, subWrap);
+            } else {
+                state.filter.folders.delete(folder);
+                if (state.filter.cats[folder]) state.filter.cats[folder].clear();
+                subWrap.innerHTML = '';
+                subWrap.hidden = true;
+                if (state.filter.folders.size === 0) filterAll.checked = true;
+            }
+            if (state.query) render();
+        });
+    });
+
+    filterAll.addEventListener('change', () => {
+        if (filterAll.checked) {
+            state.filter.folders.clear();
+            Object.values(state.filter.cats).forEach(s => s.clear());
+            folderCheckboxes.forEach(c => c.checked = false);
+            filterPanel.querySelectorAll('.filter-cats').forEach(c => { c.innerHTML = ''; c.hidden = true; });
+            if (state.query) render();
+        } else {
+            // Block uncheck when no folder is selected — at least one mode must be active.
+            filterAll.checked = true;
+        }
+    });
+
+    function renderFolderCats(folder, wrap) {
+        wrap.innerHTML = '';
+        const m = state.manifests[folder];
+        const cats = folder === 'fluent-emoji' ? Object.keys(m.categories) : (m.styles || []);
+        cats.forEach(cat => {
+            const label = document.createElement('label');
+            label.className = 'filter-row filter-row--cat';
+            const input = document.createElement('input');
+            input.type = 'checkbox';
+            input.value = cat;
+            const span = document.createElement('span');
+            span.textContent = cat;
+            label.appendChild(input);
+            label.appendChild(span);
+            input.addEventListener('change', () => {
+                if (input.checked) state.filter.cats[folder].add(cat);
+                else state.filter.cats[folder].delete(cat);
+                if (state.query) render();
+            });
+            wrap.appendChild(label);
+        });
+        wrap.hidden = false;
+    }
 
     /* Boot ----------------------------------------------------------------- */
     switchSet('fluent-emoji');

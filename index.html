@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Icons & Emoji — kohid CDN</title>
-    <meta name="description" content="Browse 18,000+ icons and emoji served from a free CDN. Microsoft Fluent Emoji + Google Material Symbols Light.">
+    <meta name="description" content="Browse 25,000+ icons and emoji served from a free CDN. Microsoft Fluent Emoji + Google Material Symbols + Material Design Icons.">
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/kohid/icons@main/fluent-emoji/svg/grinning-face.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,41 @@
             <span class="brand-name">kohid icons</span>
         </div>
         <div class="search">
-            <input type="search" id="search" placeholder="Search icons & emoji" autocomplete="off" spellcheck="false">
+            <div class="search-wrap">
+                <input type="search" id="search" placeholder="Search icons & emoji" autocomplete="off" spellcheck="false">
+                <button type="button" class="search-filter-btn" id="search-filter-btn" aria-label="Filter search" aria-expanded="false">
+                    <span aria-hidden="true">⚙</span>
+                </button>
+            </div>
+            <div class="search-filter-panel" id="search-filter-panel" hidden>
+                <label class="filter-row filter-row--all">
+                    <input type="checkbox" id="filter-all" checked>
+                    <span>All Folders</span>
+                </label>
+                <div class="filter-folders" id="filter-folders">
+                    <div class="filter-folder" data-folder="fluent-emoji">
+                        <label class="filter-row">
+                            <input type="checkbox" data-folder="fluent-emoji">
+                            <span>Fluent Emoji</span>
+                        </label>
+                        <div class="filter-cats" hidden></div>
+                    </div>
+                    <div class="filter-folder" data-folder="material-symbols-light">
+                        <label class="filter-row">
+                            <input type="checkbox" data-folder="material-symbols-light">
+                            <span>Material Symbols</span>
+                        </label>
+                        <div class="filter-cats" hidden></div>
+                    </div>
+                    <div class="filter-folder" data-folder="material-design">
+                        <label class="filter-row">
+                            <input type="checkbox" data-folder="material-design">
+                            <span>Material Design</span>
+                        </label>
+                        <div class="filter-cats" hidden></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="topbar-actions">
             <a href="https://github.com/kohid/icons" target="_blank" rel="noopener" class="ghost-btn">GitHub</a>
@@ -29,6 +63,7 @@
     <nav class="tabs" role="tablist">
         <button class="tab is-active" type="button" role="tab" data-set="fluent-emoji">Fluent Emoji</button>
         <button class="tab" type="button" role="tab" data-set="material-symbols-light">Material Symbols</button>
+        <button class="tab" type="button" role="tab" data-set="material-design">Material Design</button>
     </nav>
 
     <main class="layout">
@@ -51,6 +86,8 @@
         <span>Fluent Emoji © Microsoft (MIT)</span>
         <span class="sep">·</span>
         <span>Material Symbols © Google (Apache 2.0)</span>
+        <span class="sep">·</span>
+        <span>Material Design Icons © Pictogrammers (Apache 2.0)</span>
     </footer>
 
     <script src="browser/app.js"></script>

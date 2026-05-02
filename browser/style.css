@@ -62,11 +62,16 @@ img { display: block; }
     flex-shrink: 0;
 }
 .brand-mark { color: var(--primary); font-size: 20px; line-height: 1; }
-.search { flex: 1; max-width: 720px; }
-.search input {
+.search { flex: 1; max-width: 720px; position: relative; }
+.search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.search-wrap input {
     width: 100%;
     height: 44px;
-    padding: 0 16px;
+    padding: 0 50px 0 16px;
     border: 1px solid var(--border);
     background: var(--bg-2);
     color: var(--fg);
@@ -75,9 +80,81 @@ img { display: block; }
     outline: none;
     transition: background 0.12s, border-color 0.12s;
 }
-.search input:focus {
+.search-wrap input:focus {
     border-color: var(--primary);
     background: var(--bg);
+}
+.search-filter-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    color: var(--fg-2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+.search-filter-btn:hover { background: var(--bg-3); color: var(--fg); }
+.search-filter-btn[aria-expanded="true"] { background: var(--primary-2); color: var(--primary); }
+
+/* Filter dropdown panel */
+.search-filter-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    width: 280px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 8px 4px;
+    z-index: 60;
+}
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--fg);
+    user-select: none;
+}
+.filter-row:hover { background: var(--bg-2); }
+.filter-row input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+.filter-row--all {
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+}
+.filter-folder { padding: 2px 0; }
+.filter-cats {
+    margin-left: 32px;
+    border-left: 2px solid var(--border);
+    padding-left: 4px;
+    margin-bottom: 4px;
+}
+.filter-row--cat {
+    font-size: 13px;
+    color: var(--fg-2);
+    text-transform: capitalize;
+    padding: 5px 12px;
 }
 .topbar-actions { display: flex; gap: 8px; margin-left: auto; flex-shrink: 0; }
 .ghost-btn {
