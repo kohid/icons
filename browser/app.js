@@ -35,15 +35,16 @@
         return '';
     }
 
-    // Default style per icon set
+    // Default style per icon set ('' = "All Style", show every icon)
     const DEFAULT_STYLE = {
-        'material-symbols-light': 'regular',
-        'material-design': 'regular',
+        'material-symbols-light': '',
+        'material-design': '',
     };
 
-    // Per-set sidebar style options [value, label]
+    // Per-set sidebar style options [value, label] — first is "All Style"
     const STYLE_OPTIONS = {
         'material-symbols-light': [
+            ['', 'All Style'],
             ['regular', 'Regular'],
             ['rounded', 'Rounded'],
             ['sharp', 'Sharp'],
@@ -52,6 +53,7 @@
             ['outline-sharp', 'Outline Sharp'],
         ],
         'material-design': [
+            ['', 'All Style'],
             ['regular', 'Regular'],
             ['box', 'Box'],
             ['circle', 'Circle'],
@@ -196,6 +198,14 @@
             return out;
         }
         // Material Symbols / Material Design — same shape: m.icons[name] = [styles]
+        // Empty state.style = "All Style" → render every base icon once using
+        // its first available variant for display.
+        if (!state.style) {
+            return Object.entries(m.icons).map(([name, styles]) => ({
+                name,
+                _style: styles[0] || 'regular',
+            }));
+        }
         return Object.entries(m.icons)
             .filter(([_, styles]) => styles.includes(state.style))
             .map(([name]) => ({ name }));
@@ -529,34 +539,39 @@
             const subWrap = filterPanel.querySelector(`.filter-folder[data-folder="${folder}"] .filter-cats`);
             if (cb.checked) {
                 state.filter.folders.add(folder);
-                filterAll.checked = false;
                 try { await loadManifest(folder); } catch (_) { return; }
-                renderFolderCats(folder, subWrap);
+                renderFolderCats(folder, subWrap, true); // auto-check all categories
+                syncAllFoldersCheckbox();
             } else {
                 state.filter.folders.delete(folder);
                 if (state.filter.cats[folder]) state.filter.cats[folder].clear();
                 subWrap.innerHTML = '';
                 subWrap.hidden = true;
-                if (state.filter.folders.size === 0) filterAll.checked = true;
+                filterAll.checked = false;
             }
             if (state.query) render();
         });
     });
 
-    filterAll.addEventListener('change', () => {
-        if (filterAll.checked) {
-            state.filter.folders.clear();
-            Object.values(state.filter.cats).forEach(s => s.clear());
-            folderCheckboxes.forEach(c => c.checked = false);
-            filterPanel.querySelectorAll('.filter-cats').forEach(c => { c.innerHTML = ''; c.hidden = true; });
-            if (state.query) render();
-        } else {
-            // Block uncheck when no folder is selected — at least one mode must be active.
+    filterAll.addEventListener('change', async () => {
+        if (!filterAll.checked) {
+            // Block uncheck — at least one mode must be active.
             filterAll.checked = true;
+            return;
         }
+        // Cascade: check all folders + all their categories.
+        for (const cb of folderCheckboxes) {
+            const folder = cb.dataset.folder;
+            cb.checked = true;
+            state.filter.folders.add(folder);
+            try { await loadManifest(folder); } catch (_) { continue; }
+            const subWrap = filterPanel.querySelector(`.filter-folder[data-folder="${folder}"] .filter-cats`);
+            renderFolderCats(folder, subWrap, true);
+        }
+        if (state.query) render();
     });
 
-    function renderFolderCats(folder, wrap) {
+    function renderFolderCats(folder, wrap, checkAll = false) {
         wrap.innerHTML = '';
         const m = state.manifests[folder];
         const cats = folder === 'fluent-emoji' ? Object.keys(m.categories) : (m.styles || []);
@@ -566,13 +581,20 @@
             const input = document.createElement('input');
             input.type = 'checkbox';
             input.value = cat;
+            if (checkAll) {
+                input.checked = true;
+                state.filter.cats[folder].add(cat);
+            }
             const span = document.createElement('span');
             span.textContent = cat;
             label.appendChild(input);
             label.appendChild(span);
             input.addEventListener('change', () => {
                 if (input.checked) state.filter.cats[folder].add(cat);
-                else state.filter.cats[folder].delete(cat);
+                else {
+                    state.filter.cats[folder].delete(cat);
+                    filterAll.checked = false;
+                }
                 if (state.query) render();
             });
             wrap.appendChild(label);
@@ -580,6 +602,30 @@
         wrap.hidden = false;
     }
 
+    function syncAllFoldersCheckbox() {
+        const everyFolderChecked = [...folderCheckboxes].every(c => c.checked);
+        const everyCatChecked = [...folderCheckboxes].every(c => {
+            if (!c.checked) return false;
+            const folder = c.dataset.folder;
+            const m = state.manifests[folder];
+            if (!m) return false;
+            const allCats = folder === 'fluent-emoji' ? Object.keys(m.categories) : (m.styles || []);
+            return allCats.length > 0 && allCats.every(cat => state.filter.cats[folder].has(cat));
+        });
+        filterAll.checked = everyFolderChecked && everyCatChecked;
+    }
+
     /* Boot ----------------------------------------------------------------- */
-    switchSet('fluent-emoji');
+    switchSet('fluent-emoji').then(async () => {
+        // "All Folders" is checked by default → cascade check everything so
+        // a user typing in the search bar gets cross-folder results from the start.
+        for (const cb of folderCheckboxes) {
+            const folder = cb.dataset.folder;
+            cb.checked = true;
+            state.filter.folders.add(folder);
+            try { await loadManifest(folder); } catch (_) { continue; }
+            const subWrap = filterPanel.querySelector(`.filter-folder[data-folder="${folder}"] .filter-cats`);
+            renderFolderCats(folder, subWrap, true);
+        }
+    });
 })();
