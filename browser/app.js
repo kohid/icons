@@ -407,6 +407,36 @@
         head.appendChild(meta);
         drawerBody.appendChild(head);
 
+        // Primary actions — download the .svg file, or copy its markup.
+        const actions = document.createElement('div');
+        actions.className = 'd-actions';
+
+        const dlBtn = document.createElement('button');
+        dlBtn.type = 'button';
+        dlBtn.className = 'd-action d-action--primary';
+        dlBtn.textContent = 'Download SVG';
+        dlBtn.addEventListener('click', () => downloadSvg(url, filename, dlBtn));
+        actions.appendChild(dlBtn);
+
+        const copySvgBtn = document.createElement('button');
+        copySvgBtn.type = 'button';
+        copySvgBtn.className = 'd-action';
+        copySvgBtn.textContent = 'Copy SVG';
+        copySvgBtn.addEventListener('click', async () => {
+            const old = copySvgBtn.textContent;
+            copySvgBtn.textContent = '…';
+            try {
+                await navigator.clipboard.writeText(await fetchSvgText(url));
+                copySvgBtn.textContent = '✓';
+            } catch (_) {
+                copySvgBtn.textContent = '✗';
+            }
+            setTimeout(() => copySvgBtn.textContent = old, 1200);
+        });
+        actions.appendChild(copySvgBtn);
+
+        drawerBody.appendChild(actions);
+
         const rows = [];
         if (isFluent && item.unicode) rows.push(['Unicode', item.unicode]);
         rows.push(['Filename', filename]);
@@ -417,12 +447,17 @@
 
         rows.forEach(([label, value]) => drawerBody.appendChild(copyRow(label, value)));
 
-        // Inline SVG (fetched on demand)
+        // Inline SVG — fetched on demand, then shown inline and copied.
         const svgRow = document.createElement('div');
         svgRow.className = 'd-row';
-        svgRow.innerHTML =
-            `<div class="d-label">Inline SVG</div>` +
-            `<code class="d-val d-svgnote">Click Copy to fetch the &lt;svg&gt; markup</code>`;
+        const svgLabel = document.createElement('div');
+        svgLabel.className = 'd-label';
+        svgLabel.textContent = 'Inline SVG';
+        const svgVal = document.createElement('code');
+        svgVal.className = 'd-val d-val--svg d-svgnote';
+        svgVal.textContent = 'Click Copy to fetch the <svg> markup';
+        svgRow.appendChild(svgLabel);
+        svgRow.appendChild(svgVal);
         const svgBtn = document.createElement('button');
         svgBtn.type = 'button';
         svgBtn.className = 'd-copy';
@@ -430,8 +465,9 @@
         svgBtn.addEventListener('click', async () => {
             svgBtn.textContent = '…';
             try {
-                const r = await fetch(url);
-                const text = await r.text();
+                const text = await fetchSvgText(url);
+                svgVal.classList.remove('d-svgnote');
+                svgVal.textContent = text;
                 await navigator.clipboard.writeText(text);
                 svgBtn.textContent = '✓';
             } catch (_) {
@@ -465,6 +501,39 @@
     }
     $('#drawer-close').addEventListener('click', closeDrawer);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+    /* SVG fetch + download ------------------------------------------------- */
+    // jsDelivr serves with CORS, so we can read the markup and re-serve it as a
+    // blob download. Cache per-URL so copy/download/show don't re-hit the CDN.
+    const _svgCache = new Map();
+    async function fetchSvgText(url) {
+        if (_svgCache.has(url)) return _svgCache.get(url);
+        const r = await fetch(url);
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const text = await r.text();
+        _svgCache.set(url, text);
+        return text;
+    }
+
+    async function downloadSvg(url, filename, btn) {
+        const old = btn.textContent;
+        btn.textContent = '…';
+        try {
+            const blob = new Blob([await fetchSvgText(url)], { type: 'image/svg+xml' });
+            const href = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = href;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(href), 1000);
+            btn.textContent = '✓';
+        } catch (_) {
+            btn.textContent = '✗';
+        }
+        setTimeout(() => btn.textContent = old, 1200);
+    }
 
     /* Clipboard ------------------------------------------------------------ */
     async function copy(text, btn) {

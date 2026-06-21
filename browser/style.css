@@ -495,6 +495,31 @@ img { display: block; }
 .d-quick-glyph { font-size: 18px; line-height: 1; }
 .d-quick-label { font-size: 12px; font-weight: 500; }
 
+/* Primary download / copy action bar */
+.d-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.d-action {
+    flex: 1;
+    height: 38px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.12s, border-color 0.12s, color 0.12s, filter 0.12s;
+}
+.d-action:hover { border-color: var(--primary); color: var(--primary); }
+.d-action--primary {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+.d-action--primary:hover { color: #fff; filter: brightness(1.06); }
+
 .d-row {
     display: flex;
     align-items: flex-start;
@@ -533,6 +558,11 @@ img { display: block; }
 }
 .d-copy:hover { border-color: var(--primary); color: var(--primary); }
 .d-svgnote { color: var(--fg-3); font-style: italic; }
+.d-val--svg {
+    max-height: 180px;
+    overflow: auto;
+    white-space: pre-wrap;
+}
 
 /* Footer -------------------------------------------------------------------- */
 .sitefoot {
